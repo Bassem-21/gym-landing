@@ -1,13 +1,23 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
       {/* Navigation */}
-      <nav className="nav">
+      <nav className={`nav ${isScrolled ? 'nav-scrolled' : ''}`}>
         <div className="nav-inner">
           {/* Logo */}
           <div className="logo-elite">
@@ -131,7 +141,7 @@ function App() {
           </div>
           
           {/* Stats */}
-          <div className="flex flex-row justify-center gap-6 sm:gap-8 md:gap-12">
+          <div className="flex flex-row justify-center sm:justify-start gap-6 sm:gap-8 md:gap-12">
             <div className="stat">
               <div className="stat-num">2,500+</div>
               <div className="stat-label">Active Members</div>
