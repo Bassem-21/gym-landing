@@ -4,7 +4,7 @@ import MobileMenu from "./components/MobileMenu";
 import Hero from "./components/Hero";
 import WhyChooseUs from "./components/WhyChooseUs";
 import AboutOurGym from "./components/AboutUs";
-
+import OurCoaches from "./components/OurCoaches";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +22,7 @@ export default function App() {
       <Hero />
       <WhyChooseUs />
       <AboutOurGym />
+      <OurCoaches />
     </>
   );
 }
