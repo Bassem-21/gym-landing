@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import WhyChooseUs from "./components/WhyChooseUs";
 import AboutOurGym from "./components/AboutUs";
 import OurCoaches from "./components/OurCoaches";
+import ClassSchedule from "./components/ClassSchedule";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,6 +24,7 @@ export default function App() {
       <WhyChooseUs />
       <AboutOurGym />
       <OurCoaches />
+      <ClassSchedule />
     </>
   );
 }

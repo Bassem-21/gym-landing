@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="section section-dark" id="why">
+    <section className="section section-charcoal" id="why">
       <div className="container-page">
         {/* Title (LEFT-aligned like reference) */}
         <h2 className="text-left text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.18em] uppercase">
