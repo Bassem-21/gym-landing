@@ -7,6 +7,7 @@ import AboutOurGym from "./components/AboutUs";
 import OurCoaches from "./components/OurCoaches";
 import ClassSchedule from "./components/ClassSchedule";
 import Footer from "./components/Footer";
+import SuccessStories from "./components/SuccessStories";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,6 +27,7 @@ export default function App() {
       <AboutOurGym />
       <OurCoaches />
       <ClassSchedule />
+      <SuccessStories />
       <Footer />
     </>
   );
