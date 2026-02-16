@@ -8,6 +8,7 @@ import OurCoaches from "./components/OurCoaches";
 import ClassSchedule from "./components/ClassSchedule";
 import Footer from "./components/Footer";
 import SuccessStories from "./components/SuccessStories";
+import PricingPasses from "./components/PricingPasses";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,6 +28,7 @@ export default function App() {
       <AboutOurGym />
       <OurCoaches />
       <ClassSchedule />
+      <PricingPasses/>
       <SuccessStories />
       <Footer />
     </>
