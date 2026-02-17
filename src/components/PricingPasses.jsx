@@ -54,8 +54,8 @@ export default function PricingPasses() {
   };
 
   return (
-    <section id="pricing" className="section section-dark">
-      <div className="container-page">
+    <section id="pricing" className="section section-dark pb-8">
+      <div className="container-page border-b border-white/15 pb-16">
         {/* Title */}
         <h2 className="text-center text-3xl md:text-5xl font-extrabold tracking-[0.18em] uppercase">
           OUR GYM PASSES

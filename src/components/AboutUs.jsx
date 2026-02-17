@@ -86,7 +86,7 @@ function CirclePhoto({ src, accent = "left" }) {
       : "conic-gradient(from 50deg, transparent 0 90deg, #C8FF3D 90deg 360deg)";
 
   return (
-    <div className="relative h-40 w-40 sm:h-44 sm:w-44">
+    <div className="relative w-40 aspect-square sm:w-44">
       <div className="absolute inset-0 rounded-full" style={{ background: ringGap }} />
       <div className="absolute inset-[6px] rounded-full bg-black">
         <div

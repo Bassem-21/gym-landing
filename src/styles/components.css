@@ -6,6 +6,12 @@
   --color-brand-green: #22c55e;
 }
 
+@layer base {
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
 /* Semantic component classes */
 @layer components {
   /* Layout */
@@ -14,7 +20,7 @@
   }
 
   .section {
-    @apply px-6 py-20 md:py-28;
+    @apply px-6 py-20 md:py-24;
   }
   .section-dark {
     @apply bg-(--color-brand-dark) text-white;

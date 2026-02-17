@@ -45,10 +45,10 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="section section-charcoal" id="why">
-      <div className="container-page">
+    <section className="section section-dark pb-8" id="why">
+      <div className="container-page border-b border-white/15 pb-16">
         {/* Title (LEFT-aligned like reference) */}
-        <h2 className="text-left text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.18em] uppercase">
+        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.18em] uppercase">
           WHY CHOOSE US
         </h2>
 
@@ -58,10 +58,9 @@ export default function WhyChooseUs() {
           <button
             onClick={prev}
             aria-label="Previous"
-            className="absolute -left-5 top-1/2 -translate-y-1/2 z-20
-                       h-11 w-11 rounded-full grid place-items-center
-                       border border-white/15 bg-black/35 backdrop-blur
-                       hover:bg-white/10 transition"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14
+                       h-10 w-10 rounded-full border border-white/20
+                       bg-black/40 grid place-items-center hover:bg-white/10 transition"
           >
             <span className="text-white text-xl leading-none">‹</span>
           </button>
@@ -70,10 +69,9 @@ export default function WhyChooseUs() {
           <button
             onClick={next}
             aria-label="Next"
-            className="absolute -right-5 top-1/2 -translate-y-1/2 z-20
-                       h-11 w-11 rounded-full grid place-items-center
-                       border border-white/15 bg-black/35 backdrop-blur
-                       hover:bg-white/10 transition"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14
+                       h-10 w-10 rounded-full border border-white/20
+                       bg-black/40 grid place-items-center hover:bg-white/10 transition"
           >
             <span className="text-white text-xl leading-none">›</span>
           </button>

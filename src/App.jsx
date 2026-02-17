@@ -28,7 +28,7 @@ export default function App() {
       <AboutOurGym />
       <OurCoaches />
       <ClassSchedule />
-      <PricingPasses/>
+      <PricingPasses />
       <SuccessStories />
       <Footer />
     </>
