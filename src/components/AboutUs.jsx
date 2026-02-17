@@ -55,7 +55,7 @@ export default function AboutOurGym() {
         </p>
 
         {/* Bottom grid: circular images + two text blocks (unchanged for laptop) */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Circles */}
           <div className="md:col-span-5 flex gap-8 justify-center md:justify-start">
             <CirclePhoto
@@ -69,9 +69,33 @@ export default function AboutOurGym() {
           </div>
 
           {/* Text blocks (stack on mobile, 2 cols from sm+, unchanged) */}
-          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <InfoBlock />
-            <InfoBlock />
+          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 content-center">
+            <div>
+              <h3 className="text-base sm:text-lg font-extrabold leading-tight">
+                <span className="text-(--color-brand-orange)">Lorem</span>{" "}
+                <span className="text-white">ipsum dolor</span>
+                <br />
+                <span className="text-white">sit amet</span>
+              </h3>
+
+              <p className="mt-4 text-sm text-white/60 leading-relaxed max-w-sm">
+                Lorem ipsum dolor sit amet consectetur. Sit proin a ultrices sit.
+                Pharetra enim sed.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base sm:text-lg font-extrabold leading-tight">
+                <span className="text-(--color-brand-orange)">Lorem</span>{" "}
+                <span className="text-white">ipsum dolor</span>
+                <br />
+                <span className="text-white">sit amet</span>
+              </h3>
+
+              <p className="mt-4 text-sm text-white/60 leading-relaxed max-w-sm">
+                Lorem ipsum dolor sit amet consectetur. Sit proin a ultrices sit.
+                Pharetra enim sed.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -94,24 +118,6 @@ function CirclePhoto({ src, accent = "left" }) {
           style={{ backgroundImage: `url(${src})` }}
         />
       </div>
-    </div>
-  );
-}
-
-function InfoBlock() {
-  return (
-    <div>
-      <h3 className="text-base sm:text-lg font-extrabold leading-tight">
-        <span className="text-(--color-brand-orange)">Lorem</span>{" "}
-        <span className="text-white">ipsum dolor</span>
-        <br />
-        <span className="text-white">sit amet</span>
-      </h3>
-
-      <p className="mt-4 text-sm text-white/60 leading-relaxed max-w-sm">
-        Lorem ipsum dolor sit amet consectetur. Sit proin a ultrices sit.
-        Pharetra enim sed.
-      </p>
     </div>
   );
 }

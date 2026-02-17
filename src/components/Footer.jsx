@@ -5,7 +5,7 @@ export default function Footer() {
     () => [
       {
         title: "About",
-        links: ["About us", "Blog", "Contact", "Vacancy"],
+        links: ["About us",],
       },
       {
         title: "Services",

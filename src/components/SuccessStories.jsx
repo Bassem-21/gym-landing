@@ -135,7 +135,7 @@ export default function SuccessStories() {
 
 function StoryCard({ story }) {
   return (
-    <article className="rounded-2xl border border-white/10 bg-white/5 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+    <article className="rounded-2xl border border-white/10 bg-white/5 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.45)] flex flex-col h-full">
       {/* Image compare */}
       <BeforeAfter
         beforeImg={story.beforeImg}
@@ -144,15 +144,15 @@ function StoryCard({ story }) {
         durationLabel={story.durationLabel}
       />
 
-      {/* Metrics row */}
-      <div className="bg-black/35 px-6 py-5 border-t border-white/10">
+        {/* Metrics row */}
+      <div className="bg-black/35 px-6 py-5 border-t border-white/10 flex-1 flex flex-col">
         <div className="grid grid-cols-3 gap-4">
           {story.metrics.map((m) => (
             <div key={m.label} className="text-center">
               <div className="text-(--color-brand-orange) text-xs font-extrabold">
                 {m.icon}
               </div>
-              <div className="mt-1 text-white font-extrabold text-sm sm:text-xs">{m.value}</div>   
+              <div className="mt-1 text-white font-extrabold text-xs sm:text-sm">{m.value} </div>
               <div className="mt-1 text-[10px] tracking-[0.18em] uppercase text-white/45">
                 {m.label}
               </div>
@@ -161,11 +161,11 @@ function StoryCard({ story }) {
         </div>
 
         {/* Quote + name */}
-        <div className="mt-5 text-sm text-white/70 leading-relaxed italic">
+        <div className=" mt-5 text-sm text-white/70 leading-relaxed italic min-h-[72px] line-clamp-3">
           {story.quote}
         </div>
 
-        <div className="mt-4 flex items-baseline gap-2">
+        <div className="mt-auto pt-4 flex items-baseline gap-2">
           <div className="text-white font-extrabold text-sm">{story.name}</div>
           <div className="text-white/40 text-xs">Age {story.age}</div>
         </div>
