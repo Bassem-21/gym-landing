@@ -142,7 +142,7 @@ function ChooseCard({ featured, title, desc, Icon }) {
         {/* top row: icon (left) + small bolt circle (right) */}
         <div className="flex items-start justify-between">
           <div className={featured ? "text-black" : "text-white"}>
-            <Icon />
+            {Icon()}
           </div>
 
           <BoltCircle featured={featured} />

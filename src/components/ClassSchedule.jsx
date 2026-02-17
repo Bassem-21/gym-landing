@@ -1,6 +1,10 @@
 // src/components/ClassSchedule.jsx
 import { useMemo, useRef, useState } from "react";
 
+const START = 8 * 60; // 08:00
+const MID = 12 * 60; // 12:00
+const END = 22 * 60; // 22:00
+
 export default function ClassSchedule() {
   const sectionRef = useRef(null);
   const [showAll, setShowAll] = useState(false);
@@ -218,11 +222,6 @@ export default function ClassSchedule() {
     const [hh, mm] = t.split(":").map(Number);
     return hh * 60 + mm;
   };
-
-  // Show 08:00 → 12:00 by default, then all until 22:00 when expanded
-  const START = 8 * 60; // 08:00
-  const MID = 12 * 60; // 12:00
-  const END = 22 * 60; // 22:00
 
   const visibleSchedule = useMemo(() => {
     const inRange = schedule.filter((r) => {
