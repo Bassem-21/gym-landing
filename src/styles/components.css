@@ -1,5 +1,4 @@
 @theme {
-  --color-brand-olive: #5c7146;
   --color-brand-orange: #d4751b;
   --color-brand-charcoal: #1a1a18;
   --color-brand-dark: #0f0f0e;
@@ -28,26 +27,6 @@
   .section-charcoal {
     @apply bg-(--color-brand-charcoal) text-white;
   }
-  .section-light {
-    @apply bg-white text-(--color-brand-charcoal);
-  }
-
-  /* Cards */
-  .card {
-    @apply rounded-2xl border border-white/10 bg-white/5 shadow-sm
-      backdrop-blur;
-  }
-  .card-pad {
-    @apply p-6 md:p-8;
-  }
-
-  /* Typography */
-  .h1 {
-    @apply text-4xl md:text-6xl font-extrabold tracking-tight;
-  }
-  .h2 {
-    @apply text-2xl md:text-4xl font-bold tracking-tight;
-  }
   .p-lead {
     @apply text-base md:text-lg text-white/80 leading-relaxed;
   }
@@ -65,35 +44,11 @@
       focus:ring-offset-black border border-white/25 text-white
       hover:bg-white/10 focus:ring-white/60 px-5 py-3;
   }
-  .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-xl font-semibold
-      transition focus:outline-none focus:ring-2 focus:ring-offset-2
-      focus:ring-offset-black text-white/80 hover:text-white hover:bg-white/10
-      px-4 py-2;
-  }
   .btn-outline {
     @apply inline-flex items-center justify-center rounded-xl font-semibold
       transition focus:outline-none focus:ring-2 focus:ring-offset-2
       focus:ring-offset-black border-2 border-white text-white hover:bg-white/10
       focus:ring-white/60 px-5 py-3;
-  }
-
-  /* Badges */
-  .badge,
-  .badge-olive {
-    @apply inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs
-      font-semibold tracking-wide;
-  }
-
-  .badge {
-    @apply border-white/15 text-white/80;
-    background-color: rgba(255, 255, 255, 0.06);
-  }
-
-  .badge-olive {
-    @apply text-(--color-brand-olive);
-    border-color: rgba(92, 113, 70, 0.4);
-    background-color: rgba(92, 113, 70, 0.15);
   }
 
   .badge-green {
