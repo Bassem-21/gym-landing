@@ -1,4 +1,13 @@
 import { useMemo, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDumbbell,
+  faPersonRunning,
+  faHeartPulse,
+  faBolt,
+  faBullseye,
+  faAppleWhole
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function WhyChooseUs() {
   const items = useMemo(
@@ -7,26 +16,27 @@ export default function WhyChooseUs() {
         title: "MUSCLES BUILDING",
         desc:
           "Lorem ipsum dolor sit amet consectetur. Neque dolor in semper aliquet facilisis tristique placerat sit dummy text ever.",
-        // simple “equipment” icon svg (top-left)
-        icon: DumbbellIcon,
+        icon: faDumbbell,
+        secondaryIcon: faBolt,
       },
       {
-        title: "MUSCLES BUILDING",
+        title: "FUNCTIONAL TRAINING",
         desc:
           "Lorem ipsum dolor sit amet consectetur. Neque dolor in semper aliquet facilisis tristique placerat sit dummy text ever.",
-        icon: GripIcon,
+        icon: faPersonRunning,
+        secondaryIcon: faBullseye,
       },
       {
-        title: "MUSCLES BUILDING",
+        title: "RECOVERY & ENDURANCE",
         desc:
           "Lorem ipsum dolor sit amet consectetur. Neque dolor in semper aliquet facilisis tristique placerat sit dummy text ever.",
-        icon: BottleIcon,
+        icon: faHeartPulse,
+        secondaryIcon: faAppleWhole,
       },
     ],
-    [],
+    []
   );
 
-  // slider index (even though we always show 3, this lets arrows/dots exist like reference)
   const [active, setActive] = useState(0);
 
   const clamp = (n) => {
@@ -37,7 +47,6 @@ export default function WhyChooseUs() {
   const prev = () => setActive((v) => clamp(v - 1));
   const next = () => setActive((v) => clamp(v + 1));
 
-  // Always render 3 cards like reference; featured is the left card
   const visible = [
     items[clamp(active)],
     items[clamp(active + 1)],
@@ -47,14 +56,11 @@ export default function WhyChooseUs() {
   return (
     <section className="section section-dark pb-8" id="why">
       <div className="container-page border-b border-white/15 pb-16">
-        {/* Title (LEFT-aligned like reference) */}
         <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.18em] uppercase">
           WHY CHOOSE US
         </h2>
 
-        {/* Desktop/tablet row */}
         <div className="relative mt-10 hidden sm:block">
-          {/* Arrow LEFT (outside cards) */}
           <button
             onClick={prev}
             aria-label="Previous"
@@ -65,7 +71,6 @@ export default function WhyChooseUs() {
             <span className="text-white text-xl leading-none">‹</span>
           </button>
 
-          {/* Arrow RIGHT (outside cards) */}
           <button
             onClick={next}
             aria-label="Next"
@@ -76,7 +81,6 @@ export default function WhyChooseUs() {
             <span className="text-white text-xl leading-none">›</span>
           </button>
 
-          {/* Cards */}
           <div className="grid grid-cols-3 gap-7">
             {visible.map((card, i) => (
               <ChooseCard
@@ -84,21 +88,24 @@ export default function WhyChooseUs() {
                 featured={i === 0}
                 title={card.title}
                 desc={card.desc}
-                Icon={card.icon}
+                icon={card.icon}
+                secondaryIcon={card.secondaryIcon}
               />
             ))}
           </div>
 
-          {/* Dots (3 dots like reference) */}
           <div className="mt-6 flex items-center justify-center gap-2">
-            {[0, 1, 2].map((i) => {
-              const isOn = i === 0; // reference shows first dot active (featured card)
+            {items.map((_, i) => {
+              const isOn = i === clamp(active);
               return (
-                <span
+                <button
                   key={i}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-label={`Go to slide ${i + 1}`}
                   className={[
                     "h-2 rounded-full transition",
-                    isOn ? "w-7 bg-white/80" : "w-2 bg-white/25",
+                    isOn ? "w-7 bg-white/80" : "w-2 bg-white/25 hover:bg-white/40",
                   ].join(" ")}
                 />
               );
@@ -106,7 +113,6 @@ export default function WhyChooseUs() {
           </div>
         </div>
 
-        {/* Mobile (stacked vertical like reference) */}
         <div className="mt-8 grid gap-6 sm:hidden">
           {items.map((card, i) => (
             <ChooseCard
@@ -114,7 +120,7 @@ export default function WhyChooseUs() {
               featured={i === 0}
               title={card.title}
               desc={card.desc}
-              Icon={card.icon}
+              icon={card.icon}
             />
           ))}
         </div>
@@ -123,9 +129,8 @@ export default function WhyChooseUs() {
   );
 }
 
-function ChooseCard({ featured, title, desc, Icon }) {
-  // neon-lime like reference (not your brand green)
-  const featuredBg = "bg-[#C8FF3D] text-black";
+function ChooseCard({ featured, title, desc, icon, secondaryIcon }) {
+  const featuredBg = "bg-[var(--color-brand-green)] text-black";
   const normalBg = "bg-white/10 text-white";
 
   return (
@@ -139,21 +144,18 @@ function ChooseCard({ featured, title, desc, Icon }) {
       ].join(" ")}
     >
       <div className="p-7">
-        {/* top row: icon (left) + small bolt circle (right) */}
         <div className="flex items-start justify-between">
           <div className={featured ? "text-black" : "text-white"}>
-            {Icon()}
+            <FontAwesomeIcon icon={icon} className="text-[44px] opacity-90" />
           </div>
 
-          <BoltCircle featured={featured} />
+          <CircleIcon featured={featured} icon={secondaryIcon} />
         </div>
 
-        {/* title */}
         <h3 className="mt-6 text-sm md:text-base font-extrabold tracking-[0.18em] uppercase">
           {title}
         </h3>
 
-        {/* description */}
         <p
           className={[
             "mt-4 text-sm leading-relaxed",
@@ -163,7 +165,6 @@ function ChooseCard({ featured, title, desc, Icon }) {
           {desc}
         </p>
 
-        {/* bottom row: Learn more + bottom-right bolt circle */}
         <div className="mt-8 flex items-center justify-between">
           <a
             href="#programs"
@@ -184,7 +185,7 @@ function ChooseCard({ featured, title, desc, Icon }) {
             ].join(" ")}
             aria-label="Open"
           >
-            <BoltIcon featured={featured} />
+            <CircleIcon featured={featured} icon={secondaryIcon} />
           </button>
         </div>
       </div>
@@ -192,9 +193,7 @@ function ChooseCard({ featured, title, desc, Icon }) {
   );
 }
 
-/* ---------- Small UI bits (match reference) ---------- */
-
-function BoltCircle({ featured }) {
+function CircleIcon({ featured, icon }) {
   return (
     <div
       className={[
@@ -203,112 +202,10 @@ function BoltCircle({ featured }) {
       ].join(" ")}
       aria-hidden="true"
     >
-      <BoltIcon featured={featured} />
+      <FontAwesomeIcon
+        icon={icon}
+        className={featured ? "text-[#d4751b]" : "text-[#d4751b]"}
+      />
     </div>
-  );
-}
-
-function BoltIcon({ featured }) {
-  // reference bolt looks orange-ish inside circles
-  const fill = featured ? "#d4751b" : "#d4751b";
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M13 2L3 14h7l-1 8 12-14h-7l-1-6z"
-        fill={fill}
-      />
-    </svg>
-  );
-}
-
-/* ---------- Card “equipment icons” (simple & small like reference) ---------- */
-
-function DumbbellIcon() {
-  return (
-    <svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true">
-      <rect
-        x="10"
-        y="24"
-        width="10"
-        height="16"
-        rx="3"
-        fill="currentColor"
-        opacity="0.85"
-      />
-      <rect
-        x="44"
-        y="24"
-        width="10"
-        height="16"
-        rx="3"
-        fill="currentColor"
-        opacity="0.85"
-      />
-      <rect
-        x="20"
-        y="28"
-        width="24"
-        height="8"
-        rx="4"
-        fill="currentColor"
-        opacity="0.85"
-      />
-      <rect
-        x="6"
-        y="22"
-        width="4"
-        height="20"
-        rx="2"
-        fill="currentColor"
-        opacity="0.6"
-      />
-      <rect
-        x="54"
-        y="22"
-        width="4"
-        height="20"
-        rx="2"
-        fill="currentColor"
-        opacity="0.6"
-      />
-    </svg>
-  );
-}
-
-function GripIcon() {
-  return (
-    <svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true">
-      <path
-        d="M18 46l8-26c1-3 5-3 6 0l8 26"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        fill="none"
-        opacity="0.85"
-      />
-      <circle cx="20" cy="46" r="6" fill="currentColor" opacity="0.7" />
-      <circle cx="44" cy="46" r="6" fill="currentColor" opacity="0.7" />
-    </svg>
-  );
-}
-
-function BottleIcon() {
-  return (
-    <svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true">
-      <path
-        d="M26 8h12v8c0 2 2 4 4 6v30c0 6-4 10-10 10H32c-6 0-10-4-10-10V22c2-2 4-4 4-6V8z"
-        fill="currentColor"
-        opacity="0.85"
-      />
-      <rect
-        x="26"
-        y="8"
-        width="12"
-        height="6"
-        rx="2"
-        fill="currentColor"
-        opacity="0.65"
-      />
-    </svg>
   );
 }

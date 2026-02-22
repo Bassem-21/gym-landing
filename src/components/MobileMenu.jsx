@@ -32,9 +32,9 @@ export default function MobileMenu({ open, onClose }) {
 
         <nav className="mobile-nav-links">
           <a href="#about" onClick={onClose}>About</a>
-          <a href="#programs" onClick={onClose}>Programs</a>
+          <a href="#schedule" onClick={onClose}>Programs</a>
           <a href="#pricing" onClick={onClose}>Pricing</a>
-          <a href="#testimonials" onClick={onClose}>Testimonials</a>
+          <a href="#stories" onClick={onClose}>Testimonials</a>
           <a href="#contact" onClick={onClose}>Contact</a>
         </nav>
 
