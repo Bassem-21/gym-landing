@@ -91,7 +91,7 @@ export default function SuccessStories() {
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-[0.08em] uppercase">
             <span className="text-white">REAL </span>
-            <span className="text-(--color-brand-orange)">TRANSFORMATIONS</span>
+            <span className="text-brand-orange">TRANSFORMATIONS</span>
           </h2>
           <p className="mt-4 text-base md:text-lg text-white/60 max-w-2xl mx-auto">
             These members put in the work and changed their lives. Swipe to see their
@@ -149,7 +149,7 @@ function StoryCard({ story }) {
         <div className="grid grid-cols-3 gap-4">
           {story.metrics.map((m) => (
             <div key={m.label} className="text-center">
-              <div className="text-(--color-brand-orange) text-xs font-extrabold">
+              <div className="text-brand-orange text-xs font-extrabold">
                 {m.icon}
               </div>
               <div className="mt-1 text-white font-extrabold text-xs sm:text-sm">{m.value} </div>
@@ -213,7 +213,7 @@ function BeforeAfter({ beforeImg, afterImg, program, durationLabel }) {
       </div>
 
       <div className="absolute top-4 right-4">
-        <span className="rounded-full bg-(--color-brand-orange) px-3 py-1 text-[10px] tracking-[0.18em] uppercase text-black font-extrabold">
+        <span className="rounded-full bg-brand-orange px-3 py-1 text-[10px] tracking-[0.18em] uppercase text-black font-extrabold">
           AFTER
         </span>
       </div>

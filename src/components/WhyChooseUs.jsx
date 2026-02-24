@@ -204,7 +204,7 @@ function CircleIcon({ featured, icon }) {
     >
       <FontAwesomeIcon
         icon={icon}
-        className={featured ? "text-[#d4751b]" : "text-[#d4751b]"}
+        className={featured ? "text-brand-orange" : "text-brand-orange"}
       />
     </div>
   );

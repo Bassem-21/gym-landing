@@ -253,7 +253,7 @@ export default function ClassSchedule() {
         <div className="text-center">
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-[0.08em] uppercase">
             <span className="text-white">CLASS </span>
-            <span className="text-(--color-brand-orange)">SCHEDULE</span>
+            <span className="text-brand-orange">SCHEDULE</span>
           </h2>
           <p className="mt-4 text-base md:text-lg text-white/65">
             Choose from a variety of classes throughout the week
@@ -281,7 +281,7 @@ export default function ClassSchedule() {
 
                 <tr>
                   <th colSpan={8} className="p-0">
-                    <div className="h-[2px] bg-(--color-brand-orange)" />
+                    <div className="h-[2px] bg-brand-orange" />
                   </th>
                 </tr>
               </thead>
@@ -295,7 +295,7 @@ export default function ClassSchedule() {
                       "border-t border-white/10",
                     ].join(" ")}
                   >
-                    <td className="px-4 py-4 text-left font-extrabold text-(--color-brand-orange)">
+                    <td className="px-4 py-4 text-left font-extrabold text-brand-orange">
                       {row.time}
                     </td>
 
@@ -318,7 +318,7 @@ export default function ClassSchedule() {
               key={row.time}
               className="rounded-2xl border border-white/10 bg-white/10 p-6"
             >
-              <div className="text-(--color-brand-orange) font-extrabold text-2xl tracking-[0.04em]">
+              <div className="text-brand-orange font-extrabold text-2xl tracking-[0.04em]">
                 {row.time}
               </div>
 

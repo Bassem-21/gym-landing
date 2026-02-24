@@ -32,7 +32,7 @@ export default function AboutOurGym() {
             </p>
 
             <div className="shrink-0">
-              <span className="inline-flex items-center justify-center rounded-xl bg-lime-300 px-10 py-4 text-black font-extrabold tracking-[0.15em] uppercase shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
+              <span className="inline-flex items-center justify-center rounded-xl bg-brand-green px-10 py-4 text-black font-extrabold tracking-[0.15em] uppercase shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
                 10 YEARS
               </span>
             </div>
@@ -40,7 +40,7 @@ export default function AboutOurGym() {
 
           {/* ✅ Mobile badge (left over image like your phone screenshot) */}
           <div className="absolute left-4 bottom-4 sm:hidden">
-            <span className="inline-flex items-center justify-center rounded-xl bg-lime-300 px-8 py-3 text-black font-extrabold tracking-[0.15em] uppercase shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
+            <span className="inline-flex items-center justify-center rounded-xl bg-brand-green px-8 py-3 text-black font-extrabold tracking-[0.15em] uppercase shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
               10 YEARS
             </span>
           </div>
@@ -72,7 +72,7 @@ export default function AboutOurGym() {
           <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 content-center">
             <div>
               <h3 className="text-base sm:text-lg font-extrabold leading-tight">
-                <span className="text-(--color-brand-orange)">Lorem</span>{" "}
+                <span className="text-brand-orange">Lorem</span>{" "}
                 <span className="text-white">ipsum dolor</span>
                 <br />
                 <span className="text-white">sit amet</span>
@@ -85,7 +85,7 @@ export default function AboutOurGym() {
             </div>
             <div>
               <h3 className="text-base sm:text-lg font-extrabold leading-tight">
-                <span className="text-(--color-brand-orange)">Lorem</span>{" "}
+                <span className="text-brand-orange">Lorem</span>{" "}
                 <span className="text-white">ipsum dolor</span>
                 <br />
                 <span className="text-white">sit amet</span>
@@ -106,8 +106,8 @@ export default function AboutOurGym() {
 function CirclePhoto({ src, accent = "left" }) {
   const ringGap =
     accent === "left"
-      ? "conic-gradient(from 230deg, #C8FF3D 0 270deg, transparent 270deg 360deg)"
-      : "conic-gradient(from 50deg, transparent 0 90deg, #C8FF3D 90deg 360deg)";
+      ? "conic-gradient(from 230deg, #3f5f2a 0 270deg, transparent 270deg 360deg)"
+      : "conic-gradient(from 50deg, transparent 0 90deg, #3f5f2a 90deg 360deg)";
 
   return (
     <div className="relative w-40 aspect-square sm:w-44">

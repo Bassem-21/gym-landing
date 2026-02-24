@@ -103,7 +103,7 @@ export default function Footer() {
                   type="submit"
                   className="
                     rounded-xl md:rounded-l-none
-                    bg-[rgba(200,255,61,0.95)]
+                    bg-brand-green
                     text-black font-extrabold tracking-[0.12em] uppercase
                     px-10 py-3
                     shadow-[0_12px_30px_rgba(0,0,0,0.35)]
@@ -195,7 +195,7 @@ function SocialIcon({ icon, href = "#", label }) {
         h-9 w-9 rounded-full
         grid place-items-center
         border border-[rgba(92,113,70,0.7)]
-        text-[rgba(200,255,61,0.95)]
+        text-brand-green
         hover:bg-white/5 transition
       "
     >

@@ -28,35 +28,35 @@ export default function Navbar({ isScrolled, onOpenMenu }) {
           <a
             href="#about"
             onClick={(e) => handleScroll(e, "about")}
-            className="text-white hover:text-(--color-brand-orange) transition-colors"
+            className="text-white hover:text-brand-orange transition-colors"
           >
             About
           </a>
           <a
             href="#schedule"
             onClick={(e) => handleScroll(e, "schedule")}
-            className="text-white hover:text-(--color-brand-orange) transition-colors"
+            className="text-white hover:text-brand-orange transition-colors"
           >
             Programs
           </a>
           <a
             href="#pricing"
             onClick={(e) => handleScroll(e, "pricing")}
-            className="text-white hover:text-(--color-brand-orange) transition-colors"
+            className="text-white hover:text-brand-orange transition-colors"
           >
             Pricing
           </a>
           <a
             href="#stories"
             onClick={(e) => handleScroll(e, "stories")}
-            className="text-white hover:text-(--color-brand-orange) transition-colors"
+            className="text-white hover:text-brand-orange transition-colors"
           >
             Testimonials
           </a>
           <a
             href="#contact"
             onClick={(e) => handleScroll(e, "contact")}
-            className="text-white hover:text-(--color-brand-orange) transition-colors"
+            className="text-white hover:text-brand-orange transition-colors"
           >
             Contact
           </a>

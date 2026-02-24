@@ -75,7 +75,7 @@ export default function PricingPasses() {
             <span
               className={[
                 "absolute top-1/2 -translate-y-1/2 h-4 w-4 rounded-full",
-                "bg-(--color-brand-orange) shadow-[0_6px_18px_rgba(0,0,0,0.35)] transition",
+                "bg-brand-orange shadow-[0_6px_18px_rgba(0,0,0,0.35)] transition",
                 billing === "monthly" ? "left-1" : "left-7",
               ].join(" ")}
             />
@@ -211,7 +211,7 @@ function PlanCard({ plan, billing }) {
         className="
           mt-8 inline-flex items-center justify-center
           rounded-full px-10 py-3
-          bg-[rgba(200,255,61,0.95)]
+          bg-brand-green
           text-black font-extrabold tracking-[0.16em] uppercase text-xs
           shadow-[0_14px_30px_rgba(0,0,0,0.35)]
           hover:brightness-110 transition
