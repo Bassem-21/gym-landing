@@ -175,18 +175,7 @@ function ChooseCard({ featured, title, desc, icon, secondaryIcon }) {
           >
             LEARN MORE <span aria-hidden="true">↗</span>
           </a>
-
-          <button
-            className={[
-              "h-10 w-10 rounded-full grid place-items-center border transition",
-              featured
-                ? "border-black/15 bg-black/5 hover:bg-black/10"
-                : "border-white/15 bg-black/25 hover:bg-white/10",
-            ].join(" ")}
-            aria-label="Open"
-          >
-            <CircleIcon featured={featured} icon={secondaryIcon} />
-          </button>
+          
         </div>
       </div>
     </article>
