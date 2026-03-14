@@ -13,23 +13,23 @@ export default function WhyChooseUs() {
   const items = useMemo(
     () => [
       {
-        title: "MUSCLES BUILDING",
+        title: "MUSCLE BUILDING",
         desc:
-          "Lorem ipsum dolor sit amet consectetur. Neque dolor in semper aliquet facilisis tristique placerat sit dummy text ever.",
+          "Build strength and muscle with structured training programs designed by certified coaches. Our progressive workouts focus on proper technique, strength development, and long-term results.",
         icon: faDumbbell,
         secondaryIcon: faBolt,
       },
       {
         title: "FUNCTIONAL TRAINING",
         desc:
-          "Lorem ipsum dolor sit amet consectetur. Neque dolor in semper aliquet facilisis tristique placerat sit dummy text ever.",
+          "Improve your overall fitness with dynamic movements that strengthen your body for everyday activities. Functional training enhances mobility, stability, coordination, and total body performance.",
         icon: faPersonRunning,
         secondaryIcon: faBullseye,
       },
       {
         title: "RECOVERY & ENDURANCE",
         desc:
-          "Lorem ipsum dolor sit amet consectetur. Neque dolor in semper aliquet facilisis tristique placerat sit dummy text ever.",
+          "Balance intense workouts with recovery strategies that support endurance and long-term performance. Our programs help you improve stamina while reducing fatigue and risk of injury.",
         icon: faHeartPulse,
         secondaryIcon: faAppleWhole,
       },
@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
             aria-label="Previous"
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14
                        h-10 w-10 rounded-full border border-white/20
-                       bg-black/40 grid place-items-center hover:bg-white/10 transition"
+                       bg-black/40 hover:bg-white/10 transition"
           >
             <span className="text-white text-xl leading-none">‹</span>
           </button>
@@ -76,7 +76,7 @@ export default function WhyChooseUs() {
             aria-label="Next"
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14
                        h-10 w-10 rounded-full border border-white/20
-                       bg-black/40 grid place-items-center hover:bg-white/10 transition"
+                       bg-black/40 hover:bg-white/10 transition"
           >
             <span className="text-white text-xl leading-none">›</span>
           </button>
@@ -121,6 +121,7 @@ export default function WhyChooseUs() {
               title={card.title}
               desc={card.desc}
               icon={card.icon}
+              secondaryIcon={card.secondaryIcon}
             />
           ))}
         </div>
@@ -130,6 +131,8 @@ export default function WhyChooseUs() {
 }
 
 function ChooseCard({ featured, title, desc, icon, secondaryIcon }) {
+  const [expanded, setExpanded] = useState(false);
+
   const featuredBg = "bg-[var(--color-brand-green)] text-black";
   const normalBg = "bg-white/10 text-white";
 
@@ -156,26 +159,29 @@ function ChooseCard({ featured, title, desc, icon, secondaryIcon }) {
           {title}
         </h3>
 
+        {/* Description */}
         <p
           className={[
-            "mt-4 text-sm leading-relaxed",
+            "mt-4 text-sm leading-relaxed transition-all duration-300",
             featured ? "text-black/70" : "text-white/70",
+            !expanded && "line-clamp-3",
           ].join(" ")}
         >
           {desc}
         </p>
 
-        <div className="mt-8 flex items-center justify-between">
-          <a
-            href="#programs"
+        {/* Show more / less */}
+        <div className="mt-6 flex items-center justify-between">
+          <button
+            onClick={() => setExpanded((v) => !v)}
             className={[
               "text-xs font-extrabold tracking-[0.18em] uppercase inline-flex items-center gap-2",
               featured ? "text-black" : "text-white",
             ].join(" ")}
           >
-            LEARN MORE <span aria-hidden="true">↗</span>
-          </a>
-          
+            {expanded ? "SHOW LESS" : "SHOW MORE"}
+            <span aria-hidden="true">{expanded ? "↖" : "↘"}</span>
+          </button>
         </div>
       </div>
     </article>
